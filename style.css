@@ -75,11 +75,28 @@ button {
     filter: drop-shadow(0 0 15px rgba(2, 153, 216, 0.8));
 }
 
+.monster-container {
+    position: relative;
+}
+
 .monsterButton {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
     border: none;
     background: none;
 }
 
+.eventMessage {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    visibility: hidden;
+}
 
 .eventMessage {
     display: flex;
@@ -100,25 +117,3 @@ footer {
     margin-top: 20px;
 }
 
-
-.monster-container {
-    position: relative;
-}
-
-.monsterButton {
-    /* Your existing button styles */
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px;
-}
-
-.eventMessage {
-    position: absolute;
-    top: 30%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    visibility: hidden;
-}
