@@ -46,7 +46,7 @@ button {
 }
 
 .cookieButton:hover img {
-    filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.8));
+    filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.8));
 }
 
 .upgradeButton {
@@ -75,8 +75,9 @@ button {
     filter: drop-shadow(0 0 15px rgba(2, 153, 216, 0.8));
 }
 
-p {
-    
+spun {
+    font-weight: bold;
+    color: #0299D8;
 }
 
 footer {
