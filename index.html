@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="./app.js"></script>
     <title>Coockie Clicker</title>
-</head>
-<body>
-    <div class="container">
-        <h1 id="cookieCount">0 Cookies</h1>
+  </head>
+  <body>
+    <div class="top">
+      <h1 id="cookieCount">0 Cookies</h1>
+    </div>
+
+    <div class="bottom">
+      <div class="cookie_container">
         <button id="cookieButton" class="cookieButton">
-            <img src="./media/cookie.png" alt="cookie">
+          <img src="./media/cookie.png" alt="cookie" />
         </button>
+      </div>
+
+      <div class="button_container">
+        <button id="upgradeButton" class="upgradeButton">
+          Upgrade +1 (Cost: 10 Cookies)
+        </button>
+        <button id="upgradeButton" class="upgradeButton">
+          Upgrade +10 (Cost: 100 Cookies)
+        </button>
+        <button id="upgradeButton" class="upgradeButton">
+          Upgrade +100 (Cost: 1000 Cookies)
+        </button>
+      </div>
+
+      <div class="monster_container">
+        <img
+          class="monster"
+          src="./media/cookie_monster.png"
+          alt="cookie monster"
+        />
+      </div>
     </div>
-    <div class="button_container">
-        <button id="upgradeButton" class="upgradeButton">Upgrade (Cost: 10 Cookies)</button>
-        <button id="upgradeButton" class="upgradeButton">Upgrade (Cost: 100 Cookies)</button>
-        <button id="upgradeButton" class="upgradeButton">Upgrade (Cost: 1000 Cookies)</button>
-    </div>
-    <div>
-        <img class="monster" src="./media/cookie_monster.png" alt="cookie monster">
-    </div>
-</body>
+    <p>Click "Cookie" to bake! Click "Monster" to reset!</p>
+  </body>
+  <footer>&copy; Viniarski 2024</footer>
 </html>
