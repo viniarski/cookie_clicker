@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-    font-family: 'Rubik Burned', sans-serif;
+    font-family: 'Rubik Burned';
     font-size: 40px;
     margin-bottom: 20px;
 }
@@ -76,10 +76,6 @@ button {
     filter: drop-shadow(0 0 15px rgba(2, 153, 216, 0.8));
 }
 
-.monster-container {
-    position: relative;
-}
-
 .monsterButton {
     padding: 10px;
     font-size: 16px;
@@ -104,8 +100,9 @@ footer {
     top: 30%;
     left: 70%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
+    text-shadow: 0 0 5px #0299D8;
     color: white;
     visibility: hidden;
 }
