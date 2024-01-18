@@ -45,3 +45,44 @@ function updateCounterDisplay() {
   const cookieCount = document.getElementById("cookieCount");
   cookieCount.textContent = `${counter} Cookies`;
 }
+
+// upgrades
+
+const upgrades = [
+  {
+    upgradeName: "granny",
+    cost: 10,
+    speed: 1,
+  },
+  {
+    upgradeName: "super_oven",
+    cost: 100,
+    speed: 10,
+  },
+  {
+    upgradeName: "factory",
+    cost: 1000,
+    speed: 100,
+  },
+];
+
+const buttons = {
+    granny: document.getElementById("granny"),
+    super_oven: document.getElementById("super_oven"),
+    factory: document.getElementById("factory"),
+  };
+
+function buyUpgrade(upgrade) {
+  if (counter >= upgrade.cost) {
+    counter -= upgrade.cost;
+    updateCounterDisplay();
+    setUpgradeSpeed(upgrade.upgradeName, upgrade.speed);
+  }
+}
+
+upgrades.forEach((upgrade) => {
+  const upgradeButton = buttons[upgrade.upgradeName];
+  upgradeButton.addEventListener("click", function () {
+    buyUpgrade(upgrade);
+  });
+});
