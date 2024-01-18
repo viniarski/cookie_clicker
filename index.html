@@ -16,7 +16,7 @@
   <body>
     <!-- counter -->
     <div class="top">
-      <h1 id="cookieCount">0</h1>
+      <h1 id="cookieCount">0 Cookies</h1>
     </div>
     <!-- cookie image clicker section -->
     <div class="bottom">
@@ -25,7 +25,7 @@
           <img src="./media/cookie.png" alt="cookie" />
         </button>
       </div>
-    <!-- upgrade buttons -->
+      <!-- upgrade buttons -->
       <div class="button_container">
         <button id="upgradeButton" class="upgradeButton">
           Upgrade +1 (Cost: 10 Cookies)
@@ -37,16 +37,22 @@
           Upgrade +100 (Cost: 1000 Cookies)
         </button>
       </div>
-    <!-- monster reset button -->
+      <!-- monster reset button -->
       <div class="monster_container">
-        <img
-          class="monster"
-          src="./media/cookie_monster.png"
-          alt="cookie monster"
-        />
+        <button id="monsterButton" class="monsterButton">
+          <img
+            class="monster"
+            src="./media/cookie_monster.png"
+            alt="cookie monster"
+          />
+        </button>
+        <p id="eventMessage" class="eventMessage"></p>
       </div>
     </div>
-    <p>Click <spun>"Cookie"</spun> to bake! Click <spun>"Monster"</spun> to reset!</p>
+    <p>
+      Click <span>"Cookie"</span> to bake! Click <span>"Monster"</span> to
+      reset!
+    </p>
   </body>
   <footer>&copy; Viniarski 2024</footer>
 </html>

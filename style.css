@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e3e2e2;
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -75,7 +75,21 @@ button {
     filter: drop-shadow(0 0 15px rgba(2, 153, 216, 0.8));
 }
 
-spun {
+.monsterButton {
+    border: none;
+    background: none;
+}
+
+
+.eventMessage {
+    display: flex;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0299D8
+}
+
+span {
     font-weight: bold;
     color: #0299D8;
 }
@@ -84,4 +98,27 @@ footer {
     font-family: 'Courier New';
     font-size: 14px;
     margin-top: 20px;
+}
+
+
+.monster-container {
+    position: relative;
+}
+
+.monsterButton {
+    /* Your existing button styles */
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.eventMessage {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    visibility: hidden;
 }
