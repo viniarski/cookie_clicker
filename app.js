@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     upgrade.button.addEventListener("click", function () {
       if (cookies >= upgrade.cost) {
         cookies -= upgrade.cost;
-        totalUpgradeSpeed += upgrade.speed;
+        totalSpeed += upgrade.speed;
         updateCookiesDisplay();
         localStorage.setItem("cookieCount", cookies.toString());
       } else {
