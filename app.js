@@ -1,7 +1,7 @@
 let cookies = 0;
-let totalSpeed = 1;
+// let totalSpeed = 1;
 
-//upgrades
+// upgrades
 const upgrades = [
   {
     button: document.getElementById("granny"),
@@ -20,7 +20,7 @@ const upgrades = [
   },
 ];
 
-//update cookie display
+// update cookie display
 function updateCookiesDisplay() {
     const cookieCount = document.getElementById("cookieCount");
     cookieCount.textContent = `${cookies} Cookies`;
@@ -28,9 +28,9 @@ function updateCookiesDisplay() {
 
 // add cookies to counter
 function incrementCookies() {
-  cookies += totalSpeed; // FIX <-- totalSpeed needs to increase (calculate upgrades)
+  cookies += totalSpeed;
   updateCookiesDisplay();
-  localStorage.setItem("cookieCount", cookies.toString());
+  localStorage.setItem("cookieCount", cookies.toString()); // fix localStorage to remember totalSpeed
 }
 // MOST IMPORTANT EVENT!!! Cookie Monster eats all 🍪 🍪 🍪
 function resetCookies() {
@@ -78,3 +78,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// custom cursor
+
+document.addEventListener("DOMContentLoaded", function () {
+    const customCursor = document.getElementById("customCursor");
+  
+    document.addEventListener("mousemove", function (e) {
+      customCursor.style.left = `${e.pageX +15}px`;
+      customCursor.style.top = `${e.pageY}px`;
+    });
+  
+    document.addEventListener("mouseenter", function () {
+      customCursor.style.display = "block";
+    });
+  
+    document.addEventListener("mouseleave", function () {
+      customCursor.style.display = "none";
+    });
+  });
+  
