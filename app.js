@@ -1,5 +1,5 @@
 let cookies = 0;
-// let totalSpeed = 1;
+let totalSpeed = 1;
 
 // upgrades
 const upgrades = [
@@ -30,8 +30,10 @@ function updateCookiesDisplay() {
 function incrementCookies() {
   cookies += totalSpeed;
   updateCookiesDisplay();
-  localStorage.setItem("cookieCount", cookies.toString()); // fix localStorage to remember totalSpeed
+  localStorage.setItem("cookieCount", cookies.toString());
+  localStorage.setItem("totalSpeedCount", totalSpeed.toString());
 }
+
 // MOST IMPORTANT EVENT!!! Cookie Monster eats all 🍪 🍪 🍪
 function resetCookies() {
     cookies = 0;
@@ -52,8 +54,10 @@ function resetCookies() {
 
 document.addEventListener("DOMContentLoaded", function () {
   let savedCount = localStorage.getItem("cookieCount");
-  if (savedCount !== null) {
+  let savedTotalSpeed = localStorage.getItem("totalSpeedCount");
+  if (savedCount !== null && savedTotalSpeed !=null) {
     cookies = parseInt(savedCount, 10);
+    totalSpeed = parseInt(savedTotalSpeed)
     updateCookiesDisplay();
   }
 
@@ -85,8 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const customCursor = document.getElementById("customCursor");
   
     document.addEventListener("mousemove", function (e) {
-      customCursor.style.left = `${e.pageX +15}px`;
-      customCursor.style.top = `${e.pageY}px`;
+      customCursor.style.left = `${e.pageX +10}px`;
+      customCursor.style.top = `${e.pageY +10}px`;
     });
   
     document.addEventListener("mouseenter", function () {
