@@ -1,5 +1,7 @@
-let counter = 0;
+let cookies = 0;
+let totalSpeed = 1;
 
+//upgrades
 const upgrades = [
   {
     button: document.getElementById("granny"),
@@ -18,65 +20,61 @@ const upgrades = [
   },
 ];
 
+//update cookie display
+function updateCookiesDisplay() {
+    const cookieCount = document.getElementById("cookieCount");
+    cookieCount.textContent = `${cookies} Cookies`;
+  }
+
+// add cookies to counter
+function incrementCookies() {
+  cookies += totalSpeed; // FIX <-- totalSpeed needs to increase (calculate upgrades)
+  updateCookiesDisplay();
+  localStorage.setItem("cookieCount", cookies.toString());
+}
+// MOST IMPORTANT EVENT!!! Cookie Monster eats all 🍪 🍪 🍪
+function resetCookies() {
+    cookies = 0;
+    totalSpeed = 1;
+    updateCookiesDisplay();
+    localStorage.removeItem("cookieCount");
+  
+    const eventMessage = document.getElementById("eventMessage");
+    eventMessage.textContent = "Nom nom nom";
+    eventMessage.style.visibility = "visible";
+    nomnom.play();
+  
+    setTimeout(() => {
+      eventMessage.textContent = "";
+      eventMessage.style.visibility = "hidden";
+    }, 1000);
+  }
+
 document.addEventListener("DOMContentLoaded", function () {
   let savedCount = localStorage.getItem("cookieCount");
   if (savedCount !== null) {
-    counter = parseInt(savedCount, 10);
-    updateCounterDisplay();
+    cookies = parseInt(savedCount, 10);
+    updateCookiesDisplay();
   }
 
-  setInterval(incrementCounter, 1000);
+  setInterval(incrementCookies, 1000);
 
   const cookieButton = document.getElementById("cookieButton");
-  cookieButton.addEventListener("click", incrementCounter);
+  cookieButton.addEventListener("click", incrementCookies);
 
   const resetButton = document.getElementById("monsterButton");
-  resetButton.addEventListener("click", resetCounter);
+  resetButton.addEventListener("click", resetCookies);
 
   upgrades.forEach(upgrade => {
     upgrade.button.addEventListener("click", function () {
-      if (counter >= upgrade.cost) {
-        counter -= upgrade.cost;
-        counter += upgrade.speed;
-        updateCounterDisplay();
-        localStorage.setItem("cookieCount", counter.toString());
+      if (cookies >= upgrade.cost) {
+        cookies -= upgrade.cost;
+        totalUpgradeSpeed += upgrade.speed;
+        updateCookiesDisplay();
+        localStorage.setItem("cookieCount", cookies.toString());
       } else {
         console.log("Not enough cookies for this upgrade!");
       }
     });
   });
 });
-
-function incrementCounter() {
-  counter++;
-  // counter += totalSpeed() <--- why doesn't work? :/
-  updateCounterDisplay();
-  localStorage.setItem("cookieCount", counter.toString());
-}
-
-function resetCounter() {
-  counter = 0;
-  updateCounterDisplay();
-  localStorage.removeItem("cookieCount");
-
-  // MOST IMPORTANT EVENT!!! Monster eats all 🍪 🍪 🍪
-  const eventMessage = document.getElementById("eventMessage");
-  eventMessage.textContent = "Nom nom nom";
-  eventMessage.style.visibility = "visible";
-  nomnom.play();
-
-  setTimeout(() => {
-    eventMessage.textContent = "";
-    eventMessage.style.visibility = "hidden";
-  }, 1000);
-
-}
-
-function updateCounterDisplay() {
-  const cookieCount = document.getElementById("cookieCount");
-  cookieCount.textContent = `${counter} Cookies`;
-}
-
-function totalSpeed() {
-  return upgrades.reduce((totalSpeed, upgrade) => totalSpeed + upgrade.speed, 0);
-}
